@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PdfFolderActivity">
+
+
+    <LinearLayout
+        android:id="@+id/bottomLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/topLayout">
+        <TextView
+            android:layout_marginTop="4dp"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:background="#333333"
+            android:text="Pdf List"
+            android:gravity="center"
+            android:textColor="@color/white"
+            tools:ignore="MissingConstraints" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/pdfRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:id="@+id/topLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        tools:ignore="MissingConstraints">
+
+
+
+        <ImageView
+            android:id="@+id/returnPdfFolderToSchedule"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/returnicon"
+            android:layout_marginRight="1dp"/>
+        <ImageView
+            android:id="@+id/importPdf"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/importicon"
+            android:layout_marginLeft="5dp"/>
+
+        <ImageView
+            android:src="@drawable/trashbinicon"
+            android:id="@+id/trashPdf"
+            android:layout_width="50dp"
+            android:layout_height="50dp"/>
+
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

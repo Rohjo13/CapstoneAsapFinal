@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/dateMon"
+        android:icon="@android:drawable/ic_menu_search"
+        android:title="월요일"></item>
+    <item
+        android:id="@+id/dateTUE"
+        android:icon="@android:drawable/ic_menu_search"
+        android:title="화요일"></item>
+    <item
+        android:id="@+id/dateWED"
+        android:icon="@android:drawable/ic_menu_search"
+        android:title="수요일"></item>
+    <item
+        android:id="@+id/dateTHU"
+        android:icon="@android:drawable/ic_menu_search"
+        android:title="목요일"></item>
+    <item
+        android:id="@+id/dateFRI"
+        android:icon="@android:drawable/ic_menu_search"
+        android:title="금요일"></item>
+</menu>

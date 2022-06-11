@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".NoteActivity">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:background="@color/white" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        tools:ignore="MissingConstraints">
+
+        <ImageView
+            android:id="@+id/returnNoteToNoteFolder"
+            android:layout_width="50dp"
+            android:layout_height="40dp"
+            android:layout_marginRight="20dp"
+            android:src="@drawable/returnicon" />
+
+
+        <!--        <ImageView-->
+        <!--            android:id="@+id/backRecord"-->
+        <!--            android:layout_width="50dp"-->
+        <!--            android:layout_height="40dp"-->
+        <!--            android:layout_marginRight="1dp"-->
+        <!--            android:src="@drawable/backicon"-->
+        <!--            android:clickable="true"/>-->
+
+        <!--        <ImageView-->
+        <!--            android:id="@+id/forwardRecord"-->
+        <!--            android:layout_width="50dp"-->
+        <!--            android:layout_height="40dp"-->
+        <!--            android:layout_marginRight="1dp"-->
+        <!--            android:src="@drawable/fronticon"-->
+        <!--            android:clickable="true"/>-->
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:orientation="horizontal">
+
+
+            <ImageView
+                android:id="@+id/eraser"
+                android:layout_width="50dp"
+                android:layout_height="40dp"
+                android:layout_marginRight="1dp"
+                android:src="@drawable/erasericon"
+                android:clickable="true"/>
+
+            <ImageView
+                android:id="@+id/redPencil"
+                android:layout_width="50dp"
+                android:layout_height="40dp"
+                android:layout_marginRight="1dp"
+                android:src="@drawable/pencilicon"
+                android:clickable="true"/>
+
+            <ImageView
+                android:id="@+id/blackPencil"
+                android:layout_width="50dp"
+                android:layout_height="40dp"
+                android:layout_marginRight="1dp"
+                android:src="@drawable/pencilicon"
+                android:clickable="true"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="5dp"
+            android:background="@color/white" />
+
+        <TextView
+            android:id="@+id/note_name_view_noteActivity"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:background="#333333"
+            android:gravity="center"
+            android:text="noteName"
+            android:textColor="@color/white"
+            tools:ignore="MissingConstraints" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/noteActivity_drawingSpace"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:background="@color/white"/>
+
+</LinearLayout>
