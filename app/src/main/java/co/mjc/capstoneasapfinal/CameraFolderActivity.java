@@ -15,6 +15,7 @@ import androidx.viewpager2.widget.ViewPager2;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -52,7 +53,7 @@ public class CameraFolderActivity extends AppCompatActivity {
 
         // return ScheduleActivity
         returnCameraToSchedule.setOnClickListener(view ->
-            startActivity(new Intent(getApplicationContext(), ScheduleActivity.class)));
+                startActivity(new Intent(getApplicationContext(), ScheduleActivity.class).putExtra("cameraPathList",(Serializable) cameraPathList)));
     }
 
     // bitmap 으로 변환하는 메서드

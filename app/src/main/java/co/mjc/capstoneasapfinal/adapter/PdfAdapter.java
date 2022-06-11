@@ -30,8 +30,9 @@ public class PdfAdapter extends RecyclerView.Adapter<PdfViewHolder> {
     @NonNull
     @Override
     public PdfViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-                return new PdfViewHolder(LayoutInflater.from(context).inflate(R.layout.
-                        pdf_items_folder_grid_layout,parent,false));
+        return new PdfViewHolder(LayoutInflater.from(context).inflate(R.layout.
+                pdf_items_folder_grid_layout, parent, false));
+
     }
 
     @Override

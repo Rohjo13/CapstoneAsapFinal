@@ -1,6 +1,7 @@
 package co.mjc.capstoneasapfinal;
 
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
@@ -18,10 +19,14 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.io.ByteArrayOutputStream;
 
 import co.mjc.capstoneasapfinal.adapter.NoteAdapter;
+import co.mjc.capstoneasapfinal.database.DBHelper;
 import co.mjc.capstoneasapfinal.note.WriteNote;
 import co.mjc.capstoneasapfinal.pojo.NoteData;
 
 public class NoteActivity extends AppCompatActivity {
+
+    DBHelper dbHelper;
+    SQLiteDatabase asapDb;
 
     ImageView returnNoteToNoteFolder;
     ImageView eraser;
@@ -47,6 +52,9 @@ public class NoteActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.note_activity);
 
+        dbHelper = new DBHelper(this);
+        asapDb = dbHelper.getWritableDatabase();
+
         init();
 
         noteData = (NoteData) getIntent().getSerializableExtra("noteData");
@@ -58,6 +66,7 @@ public class NoteActivity extends AppCompatActivity {
             Bitmap bitmap = writeNote.getmBitmap();
             String bitmapString = NoteFolderActivity.bitmapToString(bitmap);
             noteData.setNoteBitmapImage(bitmapString);
+            asapDb.execSQL("UPDATE noteData SET noteImage = '" + bitmapString + "' WHERE noteName = '" + noteData.getNoteName() + "';");
             startActivity(new Intent(getApplicationContext(), NoteFolderActivity.class).putExtra("noteData",noteData));
         });
 
