@@ -53,7 +53,7 @@ public class CameraFolderActivity extends AppCompatActivity {
 
         // return ScheduleActivity
         returnCameraToSchedule.setOnClickListener(view ->
-                startActivity(new Intent(getApplicationContext(), ScheduleActivity.class).putExtra("cameraPathList",(Serializable) cameraPathList)));
+                startActivity(new Intent(getApplicationContext(), ScheduleActivity.class).putExtra("cameraPathList",(Serializable) cameraPathList)));         
     }
 
     // bitmap 으로 변환하는 메서드
