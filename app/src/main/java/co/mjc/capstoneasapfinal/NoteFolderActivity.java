@@ -16,6 +16,7 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.io.ByteArrayOutputStream;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -88,6 +89,10 @@ public class NoteFolderActivity extends AppCompatActivity implements OnNoteSelec
             noteAdapter.notifyDataSetChanged();
             dialog.show();
         });
+
+
+        returnNoteFolderToSchedule.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(),
+                ScheduleActivity.class).putExtra("noteDataList",(Serializable) noteDataList)));
 
 
     }

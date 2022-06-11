@@ -6,6 +6,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.database.sqlite.SQLiteDatabase;
+import android.graphics.Paint;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -33,6 +34,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.Serializable;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -86,16 +88,22 @@ public class ScheduleActivity extends AppCompatActivity {
 
     public void init() {
         if (cameraPathList == null) {
+            cameraPathList = (List<String>) getIntent().getSerializableExtra("cameraPathList");
+        } else {
+
             cameraPathList = new ArrayList<>();
         }
         if (scheduleList == null) {
             scheduleList = new ArrayList<>();
-
         }
         if (pdfDataList == null) {
+            pdfDataList = (List<PdfData>) getIntent().getSerializableExtra("pdfDataList");
+        } else {
             pdfDataList = new ArrayList<>();
         }
         if (noteDataList == null) {
+            noteDataList = (List<NoteData>) getIntent().getSerializableExtra("noteDataList");
+        } else {
             noteDataList = new ArrayList<>();
         }
 
@@ -376,17 +384,17 @@ public class ScheduleActivity extends AppCompatActivity {
      */
     public void scheduleToCamera() {
         startActivity(new Intent(this, CameraFolderActivity.class)
-                .putExtra("cameraPathList", (ArrayList) cameraPathList));
+                .putExtra("cameraPathList", (Serializable) cameraPathList));
     }
 
     public void scheduleToPdf() {
         startActivity(new Intent(getApplicationContext(),
-                PdfFolderActivity.class));
+                PdfFolderActivity.class).putExtra("pdfDataList", (Serializable) pdfDataList));
     }
 
     public void scheduleToNote() {
         startActivity(new Intent(getApplicationContext(),
-                NoteFolderActivity.class).putExtra("noteDataList", (ArrayList) noteDataList));
+                NoteFolderActivity.class).putExtra("noteDataList", (Serializable) noteDataList));
     }
 
     /**

@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.io.File;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -40,7 +41,7 @@ public class PdfFolderActivity extends AppCompatActivity implements OnPdfSelectL
     String pdfName;
 
     public void init() {
-        pdfList = new ArrayList<>();
+        pdfList = (List<PdfData>) getIntent().getSerializableExtra("pdfDataList");
         returnPdfFolderToSchedule = findViewById(R.id.returnPdfFolderToSchedule);
         importPdf = findViewById(R.id.importPdf);
     }
@@ -54,7 +55,7 @@ public class PdfFolderActivity extends AppCompatActivity implements OnPdfSelectL
         pdfActivate();
 
         returnPdfFolderToSchedule.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(),
-                ScheduleActivity.class)));
+                ScheduleActivity.class).putExtra("pdfDataList",(Serializable) pdfList)));
 
         // pdf 임포트한다.
         importPdf.setOnClickListener(view -> {
